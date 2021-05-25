@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>席替え(名前順)</title>
+<script>
+var lst = [
+"伊藤 博文",
+"黒田 清隆",
+"山県 有朋",
+"松方 正義",
+"大隈 重信",
+"桂 太郎",
+"西園寺 公望",
+"山本 権兵衛",
+"寺内 正毅",
+"原 敬",
+"高橋 是清",
+"加藤 友三郎",
+"清浦 奎吾",
+"加藤 高明",
+"若槻 礼次郎",
+"田中 義一",
+"浜口 雄幸",
+"犬養 毅",
+"斉藤 実",
+"佐藤 栄作",
+"田中 角栄",
+"三木 武夫",
+"福田 赳夫",
+"大平 正芳",
+"鈴木 善幸",
+"中曽根 康弘",
+"竹下 登",
+"宇野 宗佑",
+"海部 俊樹",
+"宮澤 喜一",
+"細川 護煕",
+"羽田 孜",
+"村山 富市",
+"ああ",
+"いい",
+"宮澤 喜一",
+"細川 護煕",
+"羽田 孜",
+"村山 富市",
+"ああ",
+"いい"
+];
+var num = new Array();
+for(var i=0, len=lst.length; i<len; i++) num[i] = i+1;
+function changeSeats(btn){
+
+
+    for(var i=1; i <= 41; i++){
+          document.write('<th>'+ num.splice((Math.random()*num.length)^0,1)[0] +' </th>');
+	if(i%6==0){
+	document.write('<br>');
+	}
+	
+        }
+	document.write('<br>');
+	document.write('やり直しは「F5」などでリロード');
+    
+   
+    
+    
+    btn.disabled = true;
+}
+</script>
+</head>
+<body>
+<table class="border" border="1">
+<input type="button" value="席替え" onclick="changeSeats(this)">
+(やり直しは「F5」キーなどでリロード)<br>
+
+</body>
+</html>
