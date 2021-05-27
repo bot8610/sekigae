@@ -6,21 +6,33 @@
 
 </head>
 <body>
+↓人数入力フォーム
+<form id="form1" action="#">
+    <input type="text" id="input-message">
+    <input type="button" onclick="showMessage()" value="決定">
+  </form>
+↓席替えボタン<br>
 <input type="button" id="btn1" value="席替え" onclick="btn1Click(0);" />
 
 
 <table id='data-table' border="1">
   <tr><th>前方</th><th>MAE</th><th>黒板</th><th>教卓</th><th>まえ</th><th>mae</th></tr>
-</table><br>
+
 <script>
 function btn1Click(num){
- 
 
+
+const textbox = document.getElementById("input-message");
+      const inputValue = textbox.value;
+      
 var arr=[1];
-for(var t=2;t<42;t++){
-arr.push(t);
+for(var t=1;t<inputValue;t++){
+arr.push(t+1);
 
 }
+
+var q=inputValue/6;
+var w=inputValue%6;
 
 var a = arr.length;
  
@@ -34,7 +46,7 @@ while (a) {
 
 var f=0;
 var tableEle = document.getElementById('data-table');
-for (var i = 0; i < 6; i++) {
+for (var i = 0; i < q-1; i++) {
   // テーブルの行を 6行追加する
   var tr = document.createElement('tr');
   for (var j = 0; j < 6; j++) {
@@ -50,18 +62,34 @@ for (var i = 0; i < 6; i++) {
 
 
   var tr = document.createElement('tr');
-  for (var j = 0; j < 5; j++) {
+  for (var j = 0; j < w; j++) {
     // テーブルの列を 6行追加する
     var td = document.createElement('td');
     td.innerHTML=arr[f];
     f++;
     tr.appendChild(td);
   }
-	
+
+
+   
+  tableEle.appendChild(tr);
+
+
+var tr = document.createElement('tr');
+  for (var j = 0; j < 6; j++) {
+    // テーブルの列を 6行追加する
+    var td = document.createElement('td');
+    td.innerHTML="　";
+    f++;
+    tr.appendChild(td);
+  }
+
+
+   
   tableEle.appendChild(tr);
 
 }
- 
+
 
 </script>
 
