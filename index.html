@@ -7,34 +7,42 @@
 </head>
 <body>
 <h1>席替え</h1><br>
+↓列数入力フォーム
+<form id="form1" action="#">
+    <input type="text" id="retu">
+    
+  </form>
 ↓人数入力フォーム
 <form id="form1" action="#">
     <input type="text" id="input-message">
-    <input type="button" onclick="showMessage()" value="決定">
+    
   </form>
 ↓席替えボタン<br>
 <input type="button" id="btn1" value="席替え" onclick="btn1Click(0);" />
 
 
-<table id="data-table" border="1">
-  <tr><th>前方</th><th>MAE</th><th>黒板</th><th>教卓</th><th>まえ</th><th>mae</th></tr>
+<table id="data-table" border="1"></table>
+  
 
 <div id="en"></div><br>
 <script>
 function btn1Click(num){
 
+const tex = document.getElementById("retu");
+      const retus = tex.value;
 
 const textbox = document.getElementById("input-message");
       const inputValue = textbox.value;
       
+
 var arr=[1];
 for(var t=1;t<inputValue;t++){
 arr.push(t+1);
 
 }
 
-var q=inputValue/6;
-var w=inputValue%6;
+var q=inputValue/retus;
+var w=inputValue%retus;
 
 var a = arr.length;
  
@@ -51,7 +59,7 @@ var tableEle = document.getElementById('data-table');
 for (var i = 0; i < q-1; i++) {
   // テーブルの行を 6行追加する
   var tr = document.createElement('tr');
-  for (var j = 0; j < 6; j++) {
+  for (var j = 0; j < retus; j++) {
     // テーブルの列を 6行追加する
     var td = document.createElement('td');
     td.innerHTML=arr[f];
@@ -78,7 +86,7 @@ for (var i = 0; i < q-1; i++) {
 
 
 var tr = document.createElement('tr');
-  for (var j = 0; j < 6; j++) {
+  for (var j = 0; j < retus; j++) {
     // テーブルの列を 6行追加する
     var td = document.createElement('td');
     td.innerHTML="　";
