@@ -19,6 +19,7 @@
 <table id='data-table' border="1">
   <tr><th>前方</th><th>MAE</th><th>黒板</th><th>教卓</th><th>まえ</th><th>mae</th></tr>
 
+<div id="end"></div><br>
 <script>
 function btn1Click(num){
 
@@ -88,7 +89,8 @@ var tr = document.createElement('tr');
 
    
   tableEle.appendChild(tr);
-
+  target.getElementById("output");
+  target.innerHTML="もう一度抽選するには「席替えボタン」を押してください。";
 }
 
 
