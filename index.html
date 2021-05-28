@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>席替え(名前順)</title>
+<title>席替え</title>
 
 </head>
 <body>
@@ -16,10 +16,10 @@
 <input type="button" id="btn1" value="席替え" onclick="btn1Click(0);" />
 
 
-<table id='data-table' border="1">
+<table id="data-table" border="1">
   <tr><th>前方</th><th>MAE</th><th>黒板</th><th>教卓</th><th>まえ</th><th>mae</th></tr>
-</table><br>
-<div id="end">　</div><br>
+
+<div id="en"></div><br>
 <script>
 function btn1Click(num){
 
@@ -89,7 +89,8 @@ var tr = document.createElement('tr');
 
    
   tableEle.appendChild(tr);
-  target.getElementById("end");
+  
+  target=document.getElementById("en");
   target.innerHTML="もう一度抽選するには「席替えボタン」を押してください。";
 }
 
