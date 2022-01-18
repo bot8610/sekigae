@@ -1,51 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>席替え</title>
-
 </head>
 <body>
 <h1>席替え</h1><br>
 ↓列数入力フォーム
 <form id="form1" action="#">
-    <input type="text" id="retu">
-    
+    <input type="text" id="retu">   
   </form>
 ↓人数入力フォーム
 <form id="form1" action="#">
     <input type="text" id="input-message">
-    
   </form>
 ↓席替えボタン<br>
 <input type="button" id="btn1" value="席替え" onclick="btn1Click(0);" />
-
-
 <table id="data-table" border="1"></table>
-  
-
 <div id="en"></div><br>
 <script>
 function btn1Click(num){
-
 const tex = document.getElementById("retu");
       const retus = tex.value;
-
 const textbox = document.getElementById("input-message");
       const inputValue = textbox.value;
-      
-
 var arr=[1];
 for(var t=1;t<inputValue;t++){
 arr.push(t+1);
-
 }
-
 var q=inputValue/retus;
 var w=inputValue%retus;
-
-var a = arr.length;
- 
+var a = arr.length; 
 //シャッフルアルゴリズム
 while (a) {
     var j = Math.floor( Math.random() * a );
@@ -53,7 +37,6 @@ while (a) {
     arr[a] = arr[j];
     arr[j] = t;
 }
-
 var f=0;
 var tableEle = document.getElementById('data-table');
 for (var i = 0; i < q-1; i++) {
@@ -65,12 +48,9 @@ for (var i = 0; i < q-1; i++) {
     td.innerHTML=arr[f];
     f++;
     tr.appendChild(td);
-  }
-	
+  }	
   tableEle.appendChild(tr);
 }
-
-
   var tr = document.createElement('tr');
   for (var j = 0; j < w; j++) {
     // テーブルの列を 6行追加する
@@ -79,12 +59,7 @@ for (var i = 0; i < q-1; i++) {
     f++;
     tr.appendChild(td);
   }
-
-
-   
-  tableEle.appendChild(tr);
-
-
+	tableEle.appendChild(tr);
 var tr = document.createElement('tr');
   for (var j = 0; j < retus; j++) {
     // テーブルの列を 6行追加する
@@ -93,17 +68,10 @@ var tr = document.createElement('tr');
     f++;
     tr.appendChild(td);
   }
-
-
-   
-  tableEle.appendChild(tr);
-  
+  tableEle.appendChild(tr);  
   target=document.getElementById("en");
   target.innerHTML="もう一度抽選するには「席替えボタン」を押してください。";
 }
-
-
 </script>
-
 </body>
 </html>
